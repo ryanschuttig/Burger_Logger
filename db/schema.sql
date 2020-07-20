@@ -3,10 +3,13 @@ DROP DATABASE IF EXISTS burger_db;
 CREATE DATABASE burger_db;
 USE burger_db;
 
-CREATE TABLE burgers
-(
-	id int NOT NULL AUTO_INCREMENT,
-	name varchar(255) NOT NULL,
+DROP TABLE IF EXISTS burgers;
+
+CREATE TABLE burgers (
+	id INT AUTO_INCREMENT NOT NULL,
+	name VARCHAR(255) NOT NULL,
 	devour BOOLEAN DEFAULT false,
-	PRIMARY KEY (id)
+	description VARCHAR(255),
+	createdAt TIMESTAMP NOT NULL,
+	PRIMARY KEY(id)
 );
